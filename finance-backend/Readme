@@ -1,0 +1,49 @@
+Backend de l'application HealthyBiteGH
+Description du projet
+Ce projet constitue le backend de l'application HealthyBiteGH. Il est responsable de la gestion des données (utilisateurs, plats, restaurants), de la logique de recommandation et de l'authentification. Il s'agit d'une API construite sur un framework PHP et conteneurisée pour faciliter son déploiement.
+
+Technologies utilisées
+Backend : PHP
+
+Base de données : MySQL
+
+Conteneurisation : Docker, Docker Compose
+
+Serveur web : Nginx
+
+Gestion des paquets : Composer
+
+Démarrage du projet avec Docker
+Le moyen le plus simple de démarrer le backend (et tous les services associés) est d'utiliser Docker Compose.
+
+Vérifiez votre configuration
+Assurez-vous que votre fichier docker-compose.yml est correctement configuré pour inclure le backend, le frontend et la base de données. Il doit y avoir des sections pour le service backend et le service db.
+
+Construisez et lancez les conteneurs
+Dans le terminal, naviguez jusqu'au répertoire racine de votre projet (là où se trouve le fichier docker-compose.yml). Exécutez la commande suivante :
+
+docker-compose up -d --build
+
+up : Crée et démarre les conteneurs.
+
+--build : Force la reconstruction des images Docker.
+
+-d : Lance les conteneurs en mode "détaché" (en arrière-plan).
+
+Vérifiez les services
+Une fois que les conteneurs sont lancés, vous pouvez vérifier leur statut avec :
+
+docker-compose ps
+
+Votre API backend devrait maintenant être accessible, par exemple à l'adresse http://localhost:8000, selon la configuration de votre docker-compose.yml.
+
+Commandes Docker utiles
+docker-compose build : Construit ou reconstruit les images des services sans les démarrer.
+
+docker-compose up : Démarre les conteneurs existants ou les crée s'ils n'existent pas.
+
+docker-compose down : Arrête et supprime les conteneurs, les réseaux et les volumes.
+
+docker-compose logs <nom_du_service> : Affiche les logs d'un service spécifique (par exemple, docker-compose logs backend).
+
+docker-compose exec <nom_du_service> bash : Permet d'ouvrir un shell dans le conteneur pour y exécuter des commandes.
