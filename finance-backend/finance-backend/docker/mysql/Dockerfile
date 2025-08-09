@@ -1,0 +1,4 @@
+﻿FROM mysql:8.0
+COPY my.cnf /etc/mysql/conf.d/my.cnf
+ENV MYSQL_ROOT_PASSWORD=root MYSQL_DATABASE=symfony MYSQL_USER=symfony MYSQL_PASSWORD=symfony
+EXPOSE 3306
